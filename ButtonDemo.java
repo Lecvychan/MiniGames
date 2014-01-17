@@ -5,8 +5,16 @@ import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class ButtonDemo{
+public class ButtonDemo implements ActionListener{
+
+    JButton rope0,rope1,rope2,rope3,rope4;
+    private ImageIcon big;
+
+  
+
 
     public JPanel createContentPane (){
 
@@ -23,16 +31,16 @@ public class ButtonDemo{
         totalGUI.add(titlePanel);
 
         JLabel titleLabel = new JLabel("LET'S PLAY CUT THE ROPE!");
-	titleLabel.setFont(new Font("Times New Roman", Font.BOLD, 14));
+        titleLabel.setFont(new Font("Times New Roman", Font.BOLD, 14));
         titleLabel.setLocation(175, 0);
         titleLabel.setSize(400, 40);
         titleLabel.setHorizontalAlignment(0);
         titleLabel.setForeground(Color.black);
-	titleLabel.setBackground(Color.pink);
-	titleLabel.setOpaque(true);
+        titleLabel.setBackground(Color.pink);
+        titleLabel.setOpaque(true);
         titlePanel.add(titleLabel);
 
-	JLabel messages = new JLabel("<html><p>Instructions: To play Cut the Rope, you must be brave and lucky!  Cut one of the ropes and see what happens, if it is a safe rope, you can continue on to test your luck or leave safely with your coins.  If it is deadly unfortunatley you made a fatal mistake." );
+        JLabel messages = new JLabel("<html><p>Instructions: To play Cut the Rope, you must be brave and lucky! Cut one of the ropes and see what happens, if it is a safe rope, you can continue on to test your luck or leave safely with your coins. If it is deadly unfortunatley you made a fatal mistake." );
         messages.setLocation(125, 30);
         messages.setSize(500, 100);
         messages.setHorizontalAlignment(0);
@@ -49,28 +57,33 @@ public class ButtonDemo{
 
         // We create a button and manipulate it using the syntax we have
         // used before.
-	ImageIcon image = new ImageIcon("rope0.jpg");
-        JButton rope0 = new JButton(image);
+
+        ImageIcon image = new ImageIcon("rope0.jpg");
+	ImageIcon image1 = new ImageIcon("rope0.jpeg");
+
+        rope0 = new JButton(image);
         rope0.setLocation(0, 0);
         rope0.setSize(0, 0);
+	rope0.addActionListener(this);
         buttonPanel.add(rope0);
 
-        JButton rope1 = new JButton(image);
+
+        rope1 = new JButton(image);
         rope1.setLocation(0, 0);
         rope1.setSize(0, 0);
         buttonPanel.add(rope1);
 
-        JButton rope2 = new JButton(image);
+         rope2 = new JButton(image);
         rope2.setLocation(0, 0);
         rope2.setSize(0, 0);
         buttonPanel.add(rope2);
 
-        JButton rope3 = new JButton(image);
+        rope3 = new JButton(image);
         rope3.setLocation(0, 0);
         rope3.setSize(0, 0);
         buttonPanel.add(rope3);
 
-        JButton rope4 = new JButton(image);
+         rope4 = new JButton(image);
         rope4.setLocation(0, 0);
         rope4.setSize(0, 0);
         buttonPanel.add(rope4);
@@ -107,23 +120,23 @@ public class ButtonDemo{
         totalGUI.add(bottomPanel);
 
         JLabel updates = new JLabel("Try again...");
-	updates.setFont(new Font("Times New Roman", Font.BOLD, 14));
+        updates.setFont(new Font("Times New Roman", Font.BOLD, 14));
         updates.setLocation(175, 0);
         updates.setSize(400, 40);
         updates.setHorizontalAlignment(0);
         updates.setForeground(Color.black);
-	updates.setBackground(Color.pink);
-	updates.setOpaque(true);
+        updates.setBackground(Color.pink);
+        updates.setOpaque(true);
         bottomPanel.add(updates);
 
         JLabel coin = new JLabel("Coins: 10000");
-	coin.setFont(new Font("Times New Roman", Font.BOLD, 14));
+        coin.setFont(new Font("Times New Roman", Font.BOLD, 14));
         coin.setLocation(100, 50);
         coin.setSize(250, 40);
         coin.setHorizontalAlignment(0);
         coin.setForeground(Color.black);
-	coin.setBackground(Color.pink);
-	coin.setOpaque(true);
+        coin.setBackground(Color.pink);
+        coin.setOpaque(true);
         bottomPanel.add(coin);
 
         JButton exitButton = new JButton("EXIT");
@@ -133,6 +146,12 @@ public class ButtonDemo{
         
         totalGUI.setOpaque(true);
         return totalGUI;
+    }
+
+    public void actionPerformed(ActionEvent e) {
+	if(e.getSource() == rope0) {
+	    rope0.setIcon(new ImageIcon(big));
+	}
     }
 
     private static void createAndShowGUI() {
@@ -146,7 +165,7 @@ public class ButtonDemo{
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(750, 750);
-	frame.setLocation(250,75);
+        frame.setLocation(250,75);
         frame.setVisible(true);
     }
 
@@ -158,5 +177,5 @@ public class ButtonDemo{
                 createAndShowGUI();
             }
         });
-    } 
+    }
 }
