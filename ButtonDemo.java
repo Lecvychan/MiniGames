@@ -10,9 +10,9 @@ import java.awt.event.ActionEvent;
 
 public class ButtonDemo implements ActionListener{
 
-    JButton rope0,rope1,rope2,rope3,rope4;
-    private ImageIcon big;
-
+    JButton rope0,rope1,rope2,rope3,rope4,rope5,rope6,rope7,rope8,rope9;
+	ImageIcon image1 = new ImageIcon("cutrope0.jpg");
+    int x = (int) (Math.random () * 10);
   
 
 
@@ -27,7 +27,7 @@ public class ButtonDemo implements ActionListener{
         JPanel titlePanel = new JPanel();
         titlePanel.setLayout(null);
         titlePanel.setLocation(10, 0);
-        titlePanel.setSize(250, 250);
+        titlePanel.setSize(300, 300);
         totalGUI.add(titlePanel);
 
         JLabel titleLabel = new JLabel("LET'S PLAY CUT THE ROPE!");
@@ -59,7 +59,7 @@ public class ButtonDemo implements ActionListener{
         // used before.
 
         ImageIcon image = new ImageIcon("rope0.jpg");
-	ImageIcon image1 = new ImageIcon("rope0.jpeg");
+	ImageIcon image1 = new ImageIcon("cutrope0.jpg");
 
         rope0 = new JButton(image);
         rope0.setLocation(0, 0);
@@ -71,46 +71,55 @@ public class ButtonDemo implements ActionListener{
         rope1 = new JButton(image);
         rope1.setLocation(0, 0);
         rope1.setSize(0, 0);
+	rope1.addActionListener(this);
         buttonPanel.add(rope1);
 
-         rope2 = new JButton(image);
+	rope2 = new JButton(image);
         rope2.setLocation(0, 0);
         rope2.setSize(0, 0);
+	rope2.addActionListener(this);
         buttonPanel.add(rope2);
 
         rope3 = new JButton(image);
         rope3.setLocation(0, 0);
         rope3.setSize(0, 0);
+	rope3.addActionListener(this);
         buttonPanel.add(rope3);
 
-         rope4 = new JButton(image);
+	rope4 = new JButton(image);
         rope4.setLocation(0, 0);
         rope4.setSize(0, 0);
+	rope4.addActionListener(this);
         buttonPanel.add(rope4);
 
         JButton rope5 = new JButton(image);
         rope5.setLocation(0, 0);
         rope5.setSize(0, 0);
+	rope5.addActionListener(this);
         buttonPanel.add(rope5);
 
         JButton rope6 = new JButton(image);
         rope6.setLocation(0, 0);
         rope6.setSize(0, 0);
+	rope6.addActionListener(this);
         buttonPanel.add(rope6);
 
         JButton rope7 = new JButton(image);
         rope7.setLocation(0, 0);
         rope7.setSize(0, 0);
+	rope7.addActionListener(this);
         buttonPanel.add(rope7);
 
         JButton rope8 = new JButton(image);
         rope8.setLocation(0, 0);
         rope8.setSize(0, 0);
+	rope8.addActionListener(this);
         buttonPanel.add(rope8);
 
         JButton rope9 = new JButton(image);
         rope9.setLocation(0, 0);
         rope9.setSize(0, 0);
+	rope9.addActionListener(this);
         buttonPanel.add(rope9);
 
         JPanel bottomPanel = new JPanel();
@@ -149,9 +158,52 @@ public class ButtonDemo implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e) {
-	if(e.getSource() == rope0) {
-	    rope0.setIcon(new ImageIcon(big));
+	//rope0
+	if(e.getSource() == rope0 && x != 0) {
+	    rope0.setIcon(image1);
+	    System.out.println (x);
 	}
+	//rope1
+	if(e.getSource() == rope1 && x != 1) {
+	    rope1.setIcon(image1);
+	}
+	//rope2
+	if(e.getSource() == rope2 && x != 2) {
+	    rope2.setIcon(image1);
+	}
+	//rope3
+	if(e.getSource() == rope3 && x != 3) {
+	    rope3.setIcon(image1);
+	}
+	//rope4
+	if(e.getSource() == rope4 && x != 4) {
+	    rope4.setIcon(image1);
+	}
+	//rope5
+	if(e.getSource() == rope5 && x != 5) {
+	    rope5.setIcon(image1);
+	}
+	//rope6
+	if(e.getSource() == rope6 && x != 6) {
+	    rope6.setIcon(image1);
+	
+	}
+	//rope7
+	if(e.getSource() == rope7 && x != 7) {
+	    rope7.setIcon(image1);
+	}
+	//rope8
+	if(e.getSource() == rope8 && x != 8) {
+	    rope8.setIcon(image1);
+	}
+	//rope9
+	if(e.getSource() == rope9 && x != 9) {
+	    rope9.setIcon(image1);
+	}
+
+
+
+
     }
 
     private static void createAndShowGUI() {
