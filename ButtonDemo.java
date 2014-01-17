@@ -92,31 +92,32 @@ public class ButtonDemo implements ActionListener{
 	rope4.addActionListener(this);
         buttonPanel.add(rope4);
 
-        JButton rope5 = new JButton(image);
+	rope5 = new JButton(image);
         rope5.setLocation(0, 0);
         rope5.setSize(0, 0);
 	rope5.addActionListener(this);
         buttonPanel.add(rope5);
 
-        JButton rope6 = new JButton(image);
+        rope6 = new JButton(image);
         rope6.setLocation(0, 0);
         rope6.setSize(0, 0);
 	rope6.addActionListener(this);
         buttonPanel.add(rope6);
 
-        JButton rope7 = new JButton(image);
+        rope7 = new JButton(image);
         rope7.setLocation(0, 0);
         rope7.setSize(0, 0);
 	rope7.addActionListener(this);
         buttonPanel.add(rope7);
 
-        JButton rope8 = new JButton(image);
+        rope8 = new JButton(image);
         rope8.setLocation(0, 0);
         rope8.setSize(0, 0);
 	rope8.addActionListener(this);
         buttonPanel.add(rope8);
 
-        JButton rope9 = new JButton(image);
+
+        rope9 = new JButton(image);
         rope9.setLocation(0, 0);
         rope9.setSize(0, 0);
 	rope9.addActionListener(this);
@@ -161,8 +162,7 @@ public class ButtonDemo implements ActionListener{
 	//rope0
 	if(e.getSource() == rope0 && x != 0) {
 	    rope0.setIcon(image1);
-	    System.out.println (x);
-	}
+	 	}
 	//rope1
 	if(e.getSource() == rope1 && x != 1) {
 	    rope1.setIcon(image1);
@@ -186,11 +186,11 @@ public class ButtonDemo implements ActionListener{
 	//rope6
 	if(e.getSource() == rope6 && x != 6) {
 	    rope6.setIcon(image1);
-	
-	}
+	   	}
 	//rope7
 	if(e.getSource() == rope7 && x != 7) {
 	    rope7.setIcon(image1);
+
 	}
 	//rope8
 	if(e.getSource() == rope8 && x != 8) {
