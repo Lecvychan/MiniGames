@@ -10,7 +10,7 @@ import java.awt.event.ActionEvent;
 
 public class TitlePage /* implements ActionListener */{
 
-    JButton rope, mole;
+    JButton rope, mole, scores;
     JLabel titleLabel, messages;
 
     public JPanel createContentPane () {
@@ -67,14 +67,14 @@ public class TitlePage /* implements ActionListener */{
 	//mole.addActionListener(this);
         buttonPanel.add(mole);
         
-	  JPanel bottomPanel = new JPanel();
+	JPanel bottomPanel = new JPanel();
         bottomPanel.setLayout(null);
         bottomPanel.setLocation(10, 0);
         bottomPanel.setSize(250, 30);
         totalGUI.add(bottomPanel);
 
 
-        JButton scores = new JButton("HIGH SCORES");
+        scores = new JButton("HIGH SCORES");
         scores.setLocation(265, 50);
         scores.setSize(220, 60);
         bottomPanel.add(scores);
