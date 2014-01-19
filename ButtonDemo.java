@@ -159,54 +159,83 @@ public class ButtonDemo implements ActionListener{
         return totalGUI;
     }
 
-    public void actionPerformed(ActionEvent e) {
-	//rope0
-	if(e.getSource() == rope0 && x != 0) {
+     public void actionPerformed(ActionEvent e) {
+        //rope0
+        if(e.getSource() == rope0 ) {
 	    rope0.setIcon(image1);
-	 	}
-	//rope1
-	if(e.getSource() == rope1 && x != 1) {
-	    rope1.setIcon(image1);
+	    if (0 == x || 0 == y) {
+		updates.setText("Sad life");
+	    }
 	}
-	//rope2
-	if(e.getSource() == rope2 && x != 2) {
+        //rope1
+        if(e.getSource() == rope1 ) {
+	    rope1.setIcon(image1);
+	    if (1 == x || 1 == y) {
+		updates.setText("Sad life");
+	    }
+        }
+        //rope2
+        if(e.getSource() == rope2) {
 	    rope2.setIcon(image1);
+	    if (2 == x || 2 == y) {
+		updates.setText("Sad life");
+		    }
 	}
 	//rope3
-	if(e.getSource() == rope3 && x != 3) {
+	if(e.getSource() == rope3 ) {
 	    rope3.setIcon(image1);
+	    if (3 == x || 3 == y) {
+		updates.setText("Sad life");
+		    }
 	}
 	//rope4
-	if(e.getSource() == rope4 && x != 4) {
+	if(e.getSource() == rope4 ) {
 	    rope4.setIcon(image1);
+	    if (4 == x || 4 == y) {
+		updates.setText("Sad life");
+		    }
 	}
 	//rope5
-	if(e.getSource() == rope5 && x != 5) {
+	if(e.getSource() == rope5 ) {
 	    rope5.setIcon(image1);
+	    if (5 == x || 5 == y) {
+		updates.setText("Sad life");
+		    }
 	}
 	//rope6
-	if(e.getSource() == rope6 && x != 6) {
+	if(e.getSource() == rope6 ) {
 	    rope6.setIcon(image1);
-	   	}
+	    if (6 == x || 6 == y) {
+		updates.setText("Sad life");
+		    }
+	}
 	//rope7
-	if(e.getSource() == rope7 && x != 7) {
+	if(e.getSource() == rope7 ) {
 	    rope7.setIcon(image1);
-
+	    if (7 == x || 7 == y) {
+		updates.setText("Sad life");
+		    }
 	}
 	//rope8
-	if(e.getSource() == rope8 && x != 8) {
+	if(e.getSource() == rope8 ) {
 	    rope8.setIcon(image1);
+	    if (8 == x || 8 == y) {
+		updates.setText("Sad life");
+		    }
 	}
 	//rope9
-	if(e.getSource() == rope9 && x != 9) {
+	if(e.getSource() == rope9 ) {
 	    rope9.setIcon(image1);
+	    if (9 == x || 9 == y) {
+		updates.setText("Sad life");
+		    }
 	}
 
 
 
 
     }
-
+    
     private static void createAndShowGUI() {
 
         JFrame.setDefaultLookAndFeelDecorated(true);
