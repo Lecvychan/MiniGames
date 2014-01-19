@@ -10,7 +10,7 @@ import java.awt.event.ActionEvent;
 
 public class ButtonDemo implements ActionListener{
 
-    JButton rope0,rope1,rope2,rope3,rope4,rope5,rope6,rope7,rope8,rope9;
+    JButton exitButton, rope0,rope1,rope2,rope3,rope4,rope5,rope6,rope7,rope8,rope9;
         ImageIcon image1 = new ImageIcon("cutrope0.jpg");
     JLabel updates;
 
@@ -150,7 +150,7 @@ public class ButtonDemo implements ActionListener{
         coin.setOpaque(true);
         bottomPanel.add(coin);
 
-        JButton exitButton = new JButton("EXIT");
+        exitButton = new JButton("EXIT");
         exitButton.setLocation(500, 50);
         exitButton.setSize(220, 30);
         bottomPanel.add(exitButton);
