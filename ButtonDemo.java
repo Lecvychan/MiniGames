@@ -61,7 +61,6 @@ public class ButtonDemo implements ActionListener{
         // used before.
 
         ImageIcon image = new ImageIcon("rope0.jpg");
-        ImageIcon image1 = new ImageIcon("cutrope0.jpg");
 
         rope0 = new JButton(image);
         rope0.setLocation(0, 0);
