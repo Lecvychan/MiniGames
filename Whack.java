@@ -10,7 +10,7 @@ import java.awt.event.ActionEvent;
 
 public class Whack /*implements ActionListener*/{
 
-    JButton hole0,hole1,hole2,hole3,hole4,hole5,hole6,hole7,hole8,hole9;
+    JButton exitButton,hole0,hole1,hole2,hole3,hole4,hole5,hole6,hole7,hole8,hole9;
     ImageIcon image1 = new ImageIcon("mole.jpg");
     JLabel updates;
 
@@ -157,7 +157,7 @@ public class Whack /*implements ActionListener*/{
         coin.setOpaque(true);
         bottomPanel.add(coin);
 
-        JButton exitButton = new JButton("EXIT");
+        exitButton = new JButton("EXIT");
         exitButton.setLocation(500, 50);
         exitButton.setSize(220, 30);
         bottomPanel.add(exitButton);
