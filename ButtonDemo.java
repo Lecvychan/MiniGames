@@ -24,7 +24,7 @@ public class ButtonDemo implements ActionListener{
     boolean b8 = false;
     boolean b9 = false;
 
-    int x = 0;
+    int x = (int) (Math.random() * 10);
     int y = (int) (Math.random () * 10);
     int coins = 0;
 
@@ -150,7 +150,7 @@ public class ButtonDemo implements ActionListener{
         updates.setOpaque(true);
         bottomPanel.add(updates);
 
-        JLabel coin = new JLabel("Coins: 0");
+        coin = new JLabel("Coins: 0");
         coin.setFont(new Font("Times New Roman", Font.BOLD, 14));
         coin.setLocation(100, 50);
         coin.setSize(250, 40);
@@ -178,10 +178,15 @@ public class ButtonDemo implements ActionListener{
 	    }
 	    
 	    if (b0 == false) {
+		if (0 != x &&  0 != y) {
 		coins += 100;
-		System.out.println (coins);
+	coin.setText ("Coins: " + coins);
+		    }
 	    }
 	    b0 = true;
+	
+	
+	    
 	}
         //rope1
         if(e.getSource() == rope1 ) {
@@ -190,10 +195,11 @@ public class ButtonDemo implements ActionListener{
 		updates.setText("Sad life");
 	
 	    }
-	    if (b1 == false) {
+	   if (b1 == false) {
+		if (1 != x &&  1 != y) {
 		coins += 100;
-		System.out.println (coins);
- 
+	coin.setText ("Coins: " + coins);
+		    }
 	    }
 	    b1 = true;
         }
@@ -205,9 +211,11 @@ public class ButtonDemo implements ActionListener{
 		updates.setText("Sad life");
 	
 	    }
-	    if (b2 ==false) {
-		coins += 100;
-		System.out.println (coins);
+	    if (b2 == false) {
+		if (2 != x &&  2 != y) {
+		    coins += 100;
+		    coin.setText ("Coins: " + coins);
+			}
 	    }
 	    b2 = true;
 	}
@@ -220,9 +228,11 @@ public class ButtonDemo implements ActionListener{
 		updates.setText("Sad life");
 
 	    }
-	    if (b3 ==false) {
+	   if (b3 == false) {
+		if (3 != x &&  3 != y) {
 		coins += 100;
-		System.out.println (coins);
+	coin.setText ("Coins: " + coins);
+		    }
 	    }
 	    b3 = true;
 	}
@@ -232,11 +242,13 @@ public class ButtonDemo implements ActionListener{
 	    if (4 == x || 4 == y) {
 		updates.setText("Sad life");
 	    }
-	    if (b4 ==false) {
+	     if (b4 == false) {
+		if (4 != x &&  4 != y) {
 		coins += 100;
-		System.out.println (coins);
+	coin.setText ("Coins: " + coins);
+		    }
 	    }
-		b4= true;
+	    b4 = true;
 	}
 	//rope5
 	if(e.getSource() == rope5 ) {
@@ -245,9 +257,11 @@ public class ButtonDemo implements ActionListener{
 		updates.setText("Sad life");
 		
 	    }
-	    if (b5 ==false) {
-		coins += 100;
-		System.out.println (coins);
+	    if (b5 == false) {
+		if (5 != x &&  5 != y) {
+		    coins += 100;
+		    coin.setText ("Coins: " + coins);
+			}
 	    }
 	    b5 = true;
 	}
@@ -257,9 +271,11 @@ public class ButtonDemo implements ActionListener{
 	    if (6 == x || 6 == y) {
 		updates.setText("Sad life");
 	    }
-	    if (b6 ==false) {
-		coins += 100;
-		System.out.println (coins);
+	    if (b6 == false) {
+		if (6 != x &&  6 != y) {
+		    coins += 100;
+		    coin.setText ("Coins: " + coins);
+				}
 	    }
 	    b6 = true;
 	}
@@ -269,9 +285,11 @@ public class ButtonDemo implements ActionListener{
 	    if (7 == x || 7 == y) {
 		updates.setText("Sad life");
 		    }
-	    if (b7 ==false) {
-		coins += 100;
-		System.out.println (coins);
+	     if (b7 == false) {
+		if (7 != x &&  7 != y) {
+		    coins += 100;
+		    coin.setText ("Coins: " + coins);
+				}
 	    }
 	    b7 = true;
 	}
@@ -281,9 +299,11 @@ public class ButtonDemo implements ActionListener{
 	    if (8 == x || 8 == y) {
 		updates.setText("Sad life");
 	    }
-	    if (b8 ==false) {
-		coins += 100;
-		System.out.println (coins);
+	    if (b8 == false) {
+		if (8 != x &&  8 != y) {
+		    coins += 100;
+		    coin.setText ("Coins: " + coins);
+		}
 	    }
 	    b8 = true;
 	}
@@ -293,11 +313,13 @@ public class ButtonDemo implements ActionListener{
 	    if (9 == x || 9 == y) {
 		updates.setText("Sad life");
 	    }
-	    if (b9 ==false) {
-		coins += 100;
-		System.out.println (coins);
+	    if (b9 == false) {
+		if (9 != x &&  9 != y) {
+		    coins += 100;
+		    coin.setText ("Coins: " + coins);
+		}
 	    }
-	    b9 = true;
+	    b9= true;
 	}
 	
 
