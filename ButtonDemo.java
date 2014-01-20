@@ -12,11 +12,21 @@ public class ButtonDemo implements ActionListener{
 
     JButton exitButton, rope0,rope1,rope2,rope3,rope4,rope5,rope6,rope7,rope8,rope9;
         ImageIcon image1 = new ImageIcon("cutrope0.jpg");
-    JLabel updates;
+    JLabel updates, coin;
+    boolean b0 = false;
+    boolean b1 = false;
+    boolean b2 = false;
+    boolean b3 = false;
+    boolean b4 = false;
+    boolean b5 = false;
+    boolean b6 = false;
+    boolean b7 = false;
+    boolean b8 = false;
+    boolean b9 = false;
 
-    int x = (int) (Math.random () * 10);
+    int x = 0;
     int y = (int) (Math.random () * 10);
-
+    int coins = 0;
 
     public JPanel createContentPane (){
 
@@ -140,7 +150,7 @@ public class ButtonDemo implements ActionListener{
         updates.setOpaque(true);
         bottomPanel.add(updates);
 
-        JLabel coin = new JLabel("Coins: 10000");
+        JLabel coin = new JLabel("Coins: 0");
         coin.setFont(new Font("Times New Roman", Font.BOLD, 14));
         coin.setLocation(100, 50);
         coin.setSize(250, 40);
@@ -159,55 +169,99 @@ public class ButtonDemo implements ActionListener{
         return totalGUI;
     }
 
-     public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e) {
         //rope0
         if(e.getSource() == rope0 ) {
 	    rope0.setIcon(image1);
 	    if (0 == x || 0 == y) {
 		updates.setText("Sad life");
 	    }
+	    
+	    if (b0 == false) {
+		coins += 100;
+		System.out.println (coins);
+	    }
+	    b0 = true;
 	}
         //rope1
         if(e.getSource() == rope1 ) {
 	    rope1.setIcon(image1);
 	    if (1 == x || 1 == y) {
 		updates.setText("Sad life");
+	
 	    }
+	    if (b1 == false) {
+		coins += 100;
+		System.out.println (coins);
+ 
+	    }
+	    b1 = true;
         }
         //rope2
         if(e.getSource() == rope2) {
+
 	    rope2.setIcon(image1);
 	    if (2 == x || 2 == y) {
 		updates.setText("Sad life");
-		    }
+	
+	    }
+	    if (b2 ==false) {
+		coins += 100;
+		System.out.println (coins);
+	    }
+	    b2 = true;
 	}
 	//rope3
 	if(e.getSource() == rope3 ) {
+	
 	    rope3.setIcon(image1);
 	    if (3 == x || 3 == y) {
 		updates.setText("Sad life");
-		    }
+		updates.setText("Sad life");
+
+	    }
+	    if (b3 ==false) {
+		coins += 100;
+		System.out.println (coins);
+	    }
+	    b3 = true;
 	}
 	//rope4
 	if(e.getSource() == rope4 ) {
 	    rope4.setIcon(image1);
 	    if (4 == x || 4 == y) {
 		updates.setText("Sad life");
-		    }
+	    }
+	    if (b4 ==false) {
+		coins += 100;
+		System.out.println (coins);
+	    }
+		b4= true;
 	}
 	//rope5
 	if(e.getSource() == rope5 ) {
 	    rope5.setIcon(image1);
 	    if (5 == x || 5 == y) {
 		updates.setText("Sad life");
-		    }
+		
+	    }
+	    if (b5 ==false) {
+		coins += 100;
+		System.out.println (coins);
+	    }
+	    b5 = true;
 	}
 	//rope6
 	if(e.getSource() == rope6 ) {
 	    rope6.setIcon(image1);
 	    if (6 == x || 6 == y) {
 		updates.setText("Sad life");
-		    }
+	    }
+	    if (b6 ==false) {
+		coins += 100;
+		System.out.println (coins);
+	    }
+	    b6 = true;
 	}
 	//rope7
 	if(e.getSource() == rope7 ) {
@@ -215,22 +269,37 @@ public class ButtonDemo implements ActionListener{
 	    if (7 == x || 7 == y) {
 		updates.setText("Sad life");
 		    }
+	    if (b7 ==false) {
+		coins += 100;
+		System.out.println (coins);
+	    }
+	    b7 = true;
 	}
 	//rope8
 	if(e.getSource() == rope8 ) {
 	    rope8.setIcon(image1);
 	    if (8 == x || 8 == y) {
 		updates.setText("Sad life");
-		    }
+	    }
+	    if (b8 ==false) {
+		coins += 100;
+		System.out.println (coins);
+	    }
+	    b8 = true;
 	}
 	//rope9
 	if(e.getSource() == rope9 ) {
 	    rope9.setIcon(image1);
 	    if (9 == x || 9 == y) {
 		updates.setText("Sad life");
-		    }
+	    }
+	    if (b9 ==false) {
+		coins += 100;
+		System.out.println (coins);
+	    }
+	    b9 = true;
 	}
-
+	
 
 
 
