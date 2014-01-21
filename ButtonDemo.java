@@ -9,11 +9,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.io.*;
 
+
 public class ButtonDemo implements ActionListener, Serializable{
 
     transient JButton exitButton, rope0,rope1,rope2,rope3,rope4,rope5,rope6,rope7,rope8,rope9;
     transient  ImageIcon image1 = new ImageIcon("cutrope0.jpg");
-    transient JLabel updates, coin;
+    transient JLabel updates, coin, top;
     transient boolean b0 = false;
     transient boolean b1 = false;
     transient boolean b2 = false;
@@ -148,13 +149,26 @@ public class ButtonDemo implements ActionListener, Serializable{
 
         updates = new JLabel("Try again...");
         updates.setFont(new Font("Times New Roman", Font.BOLD, 14));
-        updates.setLocation(175, 0);
+        updates.setLocation(30, 0);
         updates.setSize(400, 40);
         updates.setHorizontalAlignment(0);
         updates.setForeground(Color.black);
         updates.setBackground(Color.pink);
         updates.setOpaque(true);
         bottomPanel.add(updates);
+
+
+        top = new JLabel("Highscore: " + highscore);
+        top.setFont(new Font("Times New Roman", Font.BOLD, 14));
+        top.setLocation(500, 5);
+	top.setSize(250, 40);
+        top.setHorizontalAlignment(0);
+        top.setForeground(Color.black);
+        top.setBackground(Color.orange);
+        top.setOpaque(true);
+        bottomPanel.add(top);
+
+
 
         coin = new JLabel("Coins: 0");
         coin.setFont(new Font("Times New Roman", Font.BOLD, 14));
@@ -176,6 +190,7 @@ public class ButtonDemo implements ActionListener, Serializable{
     }
 
     public void actionPerformed(ActionEvent e) {
+
         //rope0
         if(e.getSource() == rope0 ) {
 	    rope0.setIcon(image1);
@@ -349,7 +364,22 @@ public class ButtonDemo implements ActionListener, Serializable{
 	    b9= true;
 	}
 	
-
+	try {
+	    FileOutputStream fs = new FileOutputStream ("Highscore.ser");
+	    ObjectOutputStream os = new ObjectOutputStream (fs);
+	    os.writeObject (highscore);
+	    os.close();
+	} catch (Exception ex) {
+	    ex.printStackTrace();
+	}
+	try {
+	    FileInputStream fileIn = new FileInputStream (new File ("Highscore.ser"));
+	    ObjectInputStream is = new ObjectInputStream (fileIn);
+	    highscore =  is.readInt();
+	} catch (Exception ex) {
+	    ex.printStackTrace();
+	}
+	top.setText("High Score: " + highscore);
 
 
     }
@@ -376,25 +406,10 @@ public class ButtonDemo implements ActionListener, Serializable{
 	cool.highscore = cool.getScore();
 
 	cool.createAndShowGUI();
-	try {
-	    FileOutputStream fs = new FileOutputStream ("Highscore.ser");
-	    ObjectOutputStream os = new ObjectOutputStream (fs);
-	    os.writeObject (cool);
-	    os.close();
-	} catch (Exception ex) {
-	    ex.printStackTrace();
-	}
 
-	try {
-	    ObjectInputStream is = new ObjectInputStream (new FileInputStream ("Highscore.ser"));
-	    ButtonDemo high = (ButtonDemo) is.readObject();
-	    System.out.println (high.getScore());
-	} catch (Exception ex) {
-	    ex.printStackTrace();
-	}
-    
+ 
       
-
     }
+    
 }
 
