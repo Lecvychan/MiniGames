@@ -7,26 +7,32 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.io.*;
 
-public class ButtonDemo implements ActionListener{
+public class ButtonDemo implements ActionListener, Serializable{
 
-    JButton exitButton, rope0,rope1,rope2,rope3,rope4,rope5,rope6,rope7,rope8,rope9;
-        ImageIcon image1 = new ImageIcon("cutrope0.jpg");
-    JLabel updates, coin;
-    boolean b0 = false;
-    boolean b1 = false;
-    boolean b2 = false;
-    boolean b3 = false;
-    boolean b4 = false;
-    boolean b5 = false;
-    boolean b6 = false;
-    boolean b7 = false;
-    boolean b8 = false;
-    boolean b9 = false;
+    transient JButton exitButton, rope0,rope1,rope2,rope3,rope4,rope5,rope6,rope7,rope8,rope9;
+    transient  ImageIcon image1 = new ImageIcon("cutrope0.jpg");
+    transient JLabel updates, coin;
+    transient boolean b0 = false;
+    transient boolean b1 = false;
+    transient boolean b2 = false;
+    transient boolean b3 = false;
+    transient boolean b4 = false;
+    transient boolean b5 = false;
+    transient boolean b6 = false;
+    transient boolean b7 = false;
+    transient boolean b8 = false;
+    transient boolean b9 = false;
 
-    int x = (int) (Math.random() * 10);
-    int y = (int) (Math.random () * 10);
-    int coins = 0;
+    transient int x = (int) (Math.random() * 10);
+    transient int y = (int) (Math.random () * 10);
+    transient int coins = 0;
+    public int highscore ;
+
+    public int getScore() {
+	return highscore;
+    }
 
     public JPanel createContentPane (){
 
@@ -181,6 +187,8 @@ public class ButtonDemo implements ActionListener{
 		if (0 != x &&  0 != y) {
 		coins += 100;
 	coin.setText ("Coins: " + coins);
+	if (coins > highscore) 
+	    highscore = coins;
 		    }
 	    }
 	    b0 = true;
@@ -199,6 +207,8 @@ public class ButtonDemo implements ActionListener{
 		if (1 != x &&  1 != y) {
 		coins += 100;
 	coin.setText ("Coins: " + coins);
+	if (coins > highscore) 
+	    highscore = coins;
 		    }
 	    }
 	    b1 = true;
@@ -215,6 +225,8 @@ public class ButtonDemo implements ActionListener{
 		if (2 != x &&  2 != y) {
 		    coins += 100;
 		    coin.setText ("Coins: " + coins);
+		    if (coins > highscore) 
+			highscore = coins;
 			}
 	    }
 	    b2 = true;
@@ -232,6 +244,8 @@ public class ButtonDemo implements ActionListener{
 		if (3 != x &&  3 != y) {
 		coins += 100;
 	coin.setText ("Coins: " + coins);
+	if (coins > highscore) 
+	    highscore = coins;
 		    }
 	    }
 	    b3 = true;
@@ -242,11 +256,13 @@ public class ButtonDemo implements ActionListener{
 	    if (4 == x || 4 == y) {
 		updates.setText("Sad life");
 	    }
-	     if (b4 == false) {
+	    if (b4 == false) {
 		if (4 != x &&  4 != y) {
-		coins += 100;
-	coin.setText ("Coins: " + coins);
-		    }
+		    coins += 100;
+		    coin.setText ("Coins: " + coins);
+		    if (coins > highscore) 
+			highscore = coins;
+		}
 	    }
 	    b4 = true;
 	}
@@ -261,7 +277,9 @@ public class ButtonDemo implements ActionListener{
 		if (5 != x &&  5 != y) {
 		    coins += 100;
 		    coin.setText ("Coins: " + coins);
-			}
+		    if (coins > highscore) 
+			highscore = coins;
+		}
 	    }
 	    b5 = true;
 	}
@@ -275,7 +293,10 @@ public class ButtonDemo implements ActionListener{
 		if (6 != x &&  6 != y) {
 		    coins += 100;
 		    coin.setText ("Coins: " + coins);
-				}
+		    if (coins > highscore) 
+			highscore = coins;
+
+		}
 	    }
 	    b6 = true;
 	}
@@ -284,11 +305,13 @@ public class ButtonDemo implements ActionListener{
 	    rope7.setIcon(image1);
 	    if (7 == x || 7 == y) {
 		updates.setText("Sad life");
-		    }
-	     if (b7 == false) {
+	    }
+	    if (b7 == false) {
 		if (7 != x &&  7 != y) {
 		    coins += 100;
 		    coin.setText ("Coins: " + coins);
+		    if (coins > highscore) 
+			highscore = coins;
 				}
 	    }
 	    b7 = true;
@@ -303,6 +326,8 @@ public class ButtonDemo implements ActionListener{
 		if (8 != x &&  8 != y) {
 		    coins += 100;
 		    coin.setText ("Coins: " + coins);
+		    if (coins > highscore) 
+			highscore = coins;
 		}
 	    }
 	    b8 = true;
@@ -317,6 +342,8 @@ public class ButtonDemo implements ActionListener{
 		if (9 != x &&  9 != y) {
 		    coins += 100;
 		    coin.setText ("Coins: " + coins);
+		    if (coins > highscore) 
+			highscore = coins;
 		}
 	    }
 	    b9= true;
@@ -345,13 +372,29 @@ public class ButtonDemo implements ActionListener{
     public static void main(String[] args) {
         //Schedule a job for the event-dispatching thread:
         //creating and showing this application's GUI.
+	ButtonDemo cool = new ButtonDemo ();
+	cool.highscore = cool.getScore();
 
+	cool.createAndShowGUI();
+	try {
+	    FileOutputStream fs = new FileOutputStream ("Highscore.ser");
+	    ObjectOutputStream os = new ObjectOutputStream (fs);
+	    os.writeObject (cool);
+	    os.close();
+	} catch (Exception ex) {
+	    ex.printStackTrace();
+	}
 
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                createAndShowGUI();
-            }
-        });
+	try {
+	    ObjectInputStream is = new ObjectInputStream (new FileInputStream ("Highscore.ser"));
+	    ButtonDemo high = (ButtonDemo) is.readObject();
+	    System.out.println (high.getScore());
+	} catch (Exception ex) {
+	    ex.printStackTrace();
+	}
+    
+      
+
     }
 }
 
