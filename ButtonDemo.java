@@ -149,7 +149,7 @@ public class ButtonDemo implements ActionListener, Serializable{
 
         updates = new JLabel("Try again...");
         updates.setFont(new Font("Times New Roman", Font.BOLD, 14));
-        updates.setLocation(30, 0);
+        updates.setLocation(175, 0);
         updates.setSize(400, 40);
         updates.setHorizontalAlignment(0);
         updates.setForeground(Color.black);
@@ -160,7 +160,7 @@ public class ButtonDemo implements ActionListener, Serializable{
 
         top = new JLabel("Highscore: " + highscore);
         top.setFont(new Font("Times New Roman", Font.BOLD, 14));
-        top.setLocation(500, 5);
+        top.setLocation(275, 50);
 	top.setSize(250, 40);
         top.setHorizontalAlignment(0);
         top.setForeground(Color.black);
@@ -172,7 +172,7 @@ public class ButtonDemo implements ActionListener, Serializable{
 
         coin = new JLabel("Coins: 0");
         coin.setFont(new Font("Times New Roman", Font.BOLD, 14));
-        coin.setLocation(100, 50);
+        coin.setLocation(20, 50);
         coin.setSize(250, 40);
         coin.setHorizontalAlignment(0);
         coin.setForeground(Color.black);
@@ -181,8 +181,8 @@ public class ButtonDemo implements ActionListener, Serializable{
         bottomPanel.add(coin);
 
         exitButton = new JButton("EXIT");
-        exitButton.setLocation(500, 50);
-        exitButton.setSize(220, 30);
+        exitButton.setLocation(535, 50);
+        exitButton.setSize(150, 40);
         bottomPanel.add(exitButton);
         
         totalGUI.setOpaque(true);
