@@ -191,6 +191,12 @@ public class ButtonDemo implements ActionListener, Serializable{
 
     public void actionPerformed(ActionEvent e) {
 
+
+
+    
+	top.setText("High Score: " + highscore);
+    
+
         //rope0
         if(e.getSource() == rope0 ) {
 	    rope0.setIcon(image1);
@@ -352,6 +358,7 @@ public class ButtonDemo implements ActionListener, Serializable{
 	    rope9.setIcon(image1);
 	    if (9 == x || 9 == y) {
 		updates.setText("Sad life");
+
 	    }
 	    if (b9 == false) {
 		if (9 != x &&  9 != y) {
@@ -367,22 +374,14 @@ public class ButtonDemo implements ActionListener, Serializable{
 	try {
 	    FileOutputStream fs = new FileOutputStream ("Highscore.ser");
 	    ObjectOutputStream os = new ObjectOutputStream (fs);
-	    os.writeObject (highscore);
+	    os.writeInt (highscore);
 	    os.close();
 	} catch (Exception ex) {
 	    ex.printStackTrace();
 	}
-	try {
-	    FileInputStream fileIn = new FileInputStream (new File ("Highscore.ser"));
-	    ObjectInputStream is = new ObjectInputStream (fileIn);
-	    highscore =  is.readInt();
-	} catch (Exception ex) {
-	    ex.printStackTrace();
-	}
 	top.setText("High Score: " + highscore);
-
-
     }
+
     
     private static void createAndShowGUI() {
 
@@ -399,15 +398,30 @@ public class ButtonDemo implements ActionListener, Serializable{
         frame.setVisible(true);
     }
 
+	public void loadHS() {
+		try {
+			FileInputStream fileIn = new FileInputStream ("Highscore.ser");
+   			ObjectInputStream is = new ObjectInputStream (fileIn);
+       			highscore = is.readInt(); 
+System.out.println("High Score: " + highscore);
+
+		} catch(FileNotFoundException ex) {
+			System.out.println("fnfo");
+		} catch(Exception ex) {
+	System.out.println (ex.getMessage());	
+}
+	}
+
     public static void main(String[] args) {
         //Schedule a job for the event-dispatching thread:
         //creating and showing this application's GUI.
 	ButtonDemo cool = new ButtonDemo ();
 	cool.highscore = cool.getScore();
+	cool.loadHS();
 
-	cool.createAndShowGUI();
 
- 
+	   
+  cool.createAndShowGUI();
       
     }
     
