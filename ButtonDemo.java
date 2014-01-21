@@ -191,6 +191,19 @@ public class ButtonDemo implements ActionListener, Serializable{
 
     public void actionPerformed(ActionEvent e) {
 
+	try {
+	    FileInputStream fileIn = new FileInputStream ("Highscore.ser");
+	    ObjectInputStream is = new ObjectInputStream (fileIn);
+	    highscore = is.readInt(); 
+
+
+	} catch(FileNotFoundException ex) {
+	    System.out.println("No Score");
+	} catch(Exception ex) {
+	    System.out.println (ex.getMessage());	
+
+	}
+    
 
 
     
@@ -399,17 +412,17 @@ public class ButtonDemo implements ActionListener, Serializable{
     }
 
 	public void loadHS() {
-		try {
-			FileInputStream fileIn = new FileInputStream ("Highscore.ser");
-   			ObjectInputStream is = new ObjectInputStream (fileIn);
-       			highscore = is.readInt(); 
-System.out.println("High Score: " + highscore);
+	    try {
+		FileInputStream fileIn = new FileInputStream ("Highscore.ser");
+		ObjectInputStream is = new ObjectInputStream (fileIn);
+		highscore = is.readInt(); 
+		
+	    } catch(FileNotFoundException ex) {
+		System.out.println("No Score");
+	    } catch(Exception ex) {
+		System.out.println (ex.getMessage());	
 
-		} catch(FileNotFoundException ex) {
-			System.out.println("fnfo");
-		} catch(Exception ex) {
-	System.out.println (ex.getMessage());	
-}
+	    }
 	}
 
     public static void main(String[] args) {
