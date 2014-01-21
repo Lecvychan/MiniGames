@@ -8,7 +8,7 @@ import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class TitlePage /* implements ActionListener */{
+public class TitlePage  implements ActionListener {
 
     JButton rope, mole, scores;
     JLabel titleLabel, messages;
@@ -58,16 +58,16 @@ public class TitlePage /* implements ActionListener */{
         rope = new JButton(image);
         rope.setLocation(0, 0);
         rope.setSize(0, 0);
-	//rope.addActionListener(this);
+	rope.addActionListener(this);
         buttonPanel.add(rope);
 
         mole = new JButton(image1);
         mole.setLocation(0, 0);
         mole.setSize(0, 0);
-	//mole.addActionListener(this);
+	mole.addActionListener(this);
         buttonPanel.add(mole);
         
-	JPanel bottomPanel = new JPanel();
+	  JPanel bottomPanel = new JPanel();
         bottomPanel.setLayout(null);
         bottomPanel.setLocation(10, 0);
         bottomPanel.setSize(250, 30);
@@ -82,33 +82,33 @@ public class TitlePage /* implements ActionListener */{
         totalGUI.setOpaque(true);
         return totalGUI;
     }
-    /*
+
     public void actionPerformed(ActionEvent e) {
-        //rope0
-        if(e.getSource() == rope0 ) {
-	    rope0.setIcon(image1);
-	    if (0 == x || 0 == y) {
-		updates.setText("Sad life");
-	    }
+        //rope
+        if(e.getSource() == rope ) {
+	    ButtonDemo game = new ButtonDemo();
+	    String[] args1 = {};
+	    game.main(args1);
 	}
-        //rope1
-        if(e.getSource() == rope1 ) {
-	    rope1.setIcon(image1);
-	    if (1 == x || 1 == y) {
-		updates.setText("Sad life");
-	    }
-        }
-        //rope2
+        //mole
+       if(e.getSource() == mole ) {
+	   Whack game = new Whack();
+	    String[] args2 = {};
+	    game.main(args2);
+	}
+
+	/* //scores
         if(e.getSource() == rope2) {
 	    rope2.setIcon(image1);
 	    if (2 == x || 2 == y) {
 		updates.setText("Sad life");
 		    }
+	*/
 
 
-    }
+    
 }
-*/
+
 
     private static void createAndShowGUI() {
 
@@ -129,11 +129,12 @@ public class TitlePage /* implements ActionListener */{
         //Schedule a job for the event-dispatching thread:
         //creating and showing this application's GUI.
 
-
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 createAndShowGUI();
             }
-        });
+   
+	    });
+        
     }
 }
