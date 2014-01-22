@@ -7,16 +7,19 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.Timer;
 
-public class Whack /*implements ActionListener*/{
+public class Whack implements ActionListener{
 
-    JButton exitButton,hole0,hole1,hole2,hole3,hole4,hole5,hole6,hole7,hole8,hole9;
+    JButton hole0,hole1,hole2,hole3,hole4,hole5,hole6,hole7,hole8,hole9,exitButton;
+    ImageIcon image = new ImageIcon("hole.jpg");
     ImageIcon image1 = new ImageIcon("mole.jpg");
-    JLabel updates;
-
-    int x = (int) (Math.random () * 10);
-    int y = (int) (Math.random () * 10);
-
+    JLabel updates, coin;
+    static JFrame frame;
+    int coins = 0;
+    int x;
+    boolean running0, running1, running2, running3, running4, running5, running6, running7, running8, running9;
+    private int num = 0;
 
     public JPanel createContentPane (){
 
@@ -66,68 +69,68 @@ public class Whack /*implements ActionListener*/{
         // We create a button and manipulate it using the syntax we have
         // used before.
 
-        ImageIcon image = new ImageIcon("hole.jpg");
+
 
 	hole0 = new JButton(image);
         hole0.setLocation(0, 0);
         hole0.setSize(0, 0);
-        //hole0.addActionListener(this);
+        hole0.addActionListener(this);
         buttonPanel1.add(hole0);
 
 
         hole1 = new JButton(image);
         hole1.setLocation(0, 0);
         hole1.setSize(0, 0);
-        //hole1.addActionListener(this);
+        hole1.addActionListener(this);
         buttonPanel1.add(hole1);
 
         hole2 = new JButton(image);
         hole2.setLocation(0, 0);
         hole2.setSize(0, 0);
-        //hole2.addActionListener(this);
+        hole2.addActionListener(this);
         buttonPanel1.add(hole2);
 
         hole3 = new JButton(image);
         hole3.setLocation(0, 0);
         hole3.setSize(0, 0);
-        //hole3.addActionListener(this);
+        hole3.addActionListener(this);
         buttonPanel1.add(hole3);
 
         hole4 = new JButton(image);
         hole4.setLocation(0, 0);
         hole4.setSize(0, 0);
-        //hole4.addActionListener(this);
+        hole4.addActionListener(this);
         buttonPanel1.add(hole4);
 
         hole5 = new JButton(image);
         hole5.setLocation(0, 0);
         hole5.setSize(0, 0);
-        //hole5.addActionListener(this);
+        hole5.addActionListener(this);
         buttonPanel2.add(hole5);
 
         hole6 = new JButton(image);
         hole6.setLocation(0, 0);
         hole6.setSize(0, 0);
-        //hole6.addActionListener(this);
+        hole6.addActionListener(this);
         buttonPanel2.add(hole6);
 
         hole7 = new JButton(image);
         hole7.setLocation(0, 0);
         hole7.setSize(0, 0);
-        //hole7.addActionListener(this);
+        hole7.addActionListener(this);
         buttonPanel2.add(hole7);
 
         hole8 = new JButton(image);
         hole8.setLocation(0, 0);
         hole8.setSize(0, 0);
-        //hole8.addActionListener(this);
+        hole8.addActionListener(this);
         buttonPanel2.add(hole8);
 
 
         hole9 = new JButton(image);
         hole9.setLocation(0, 0);
         hole9.setSize(0, 0);
-        //hole9.addActionListener(this);
+        hole9.addActionListener(this);
         buttonPanel2.add(hole9);
 
 
@@ -147,7 +150,7 @@ public class Whack /*implements ActionListener*/{
         updates.setOpaque(true);
         bottomPanel.add(updates);
 
-        JLabel coin = new JLabel("Coins: 10000");
+        coin = new JLabel("Coins: 0");
         coin.setFont(new Font("Times New Roman", Font.BOLD, 14));
         coin.setLocation(100, 50);
         coin.setSize(250, 40);
@@ -160,113 +163,199 @@ public class Whack /*implements ActionListener*/{
         exitButton = new JButton("EXIT");
         exitButton.setLocation(500, 50);
         exitButton.setSize(220, 30);
+	exitButton.addActionListener(this);
         bottomPanel.add(exitButton);
         
         totalGUI.setOpaque(true);
-        return totalGUI;
+        return totalGUI;	
+
+    }
+    
+    public  void changeIcon() {
+	long usedTime;
+	long startTime;
+
+ 	for (int num = 0; num < 30; num++) {
+
+	    x = (int) (Math.random () * 10);
+
+	    usedTime = 0;
+	    startTime = System.currentTimeMillis();
+
+	    //mole pops up
+	    if (0 == x) {
+		hole0.setIcon(image1);
+		running0 = true;
+	    }
+	    if (1 == x) {
+		hole1.setIcon(image1);
+		running1 = true;
+	    }
+	    if (2 == x) {
+		hole2.setIcon(image1);
+		running2 = true;
+	    }
+	    if (3 == x) {
+		hole3.setIcon(image1);
+		running3 = true;
+	    }
+	    if (4 == x) {
+		hole4.setIcon(image1);
+		running4 = true;
+	    }
+	    if (5 == x) {
+		hole5.setIcon(image1);
+		running5 = true;
+	    }
+	    if (6 == x) {
+		hole6.setIcon(image1);
+		running6 = true;
+	    }
+	    if (7 == x) {
+		hole7.setIcon(image1);
+		running7 = true;
+	    }
+	    if (8 == x) {
+		hole8.setIcon(image1);
+		running8 = true;
+	    }
+	    if (9 == x) {
+		hole9.setIcon(image1);
+		running9 = true;
+	    }
+	       //when the time is up
+       while (usedTime <= 777) {
+	    	usedTime = System.currentTimeMillis() - startTime;
+	    }
+
+
+	    //mole goes bye bye
+	    if (running0 == true) {
+		hole0.setIcon(image);
+		running0 = false;
+	    }
+	    if (running1 == true) {
+		hole1.setIcon(image);
+		running1 = false;
+	    }
+	    if (running2 == true) {
+		hole2.setIcon(image);
+		running2 = false;
+	    }
+	    if (running3 == true) {
+		hole3.setIcon(image);
+		running3 = false;
+	    }
+	    if (running4 == true) {
+		hole4.setIcon(image);
+		running4 = false;
+	    }
+	    if (running5 == true) {
+		hole5.setIcon(image);
+		running5 = false;
+	    }
+	    if (running6 == true) {
+		hole6.setIcon(image);
+		running6 = false;
+	    }
+	    if (running7 == true) {
+		hole7.setIcon(image);
+		running7 = false;
+	    }
+	    if (running8 == true) {
+		hole8.setIcon(image);
+		running8 = false;
+	    }
+	    if (running9 == true) {
+		hole9.setIcon(image);
+		running9 = false;
+	    
+	    }
+	    
+	    }
+    }
+    
+    
+
+
+    public void actionPerformed(ActionEvent e) {
+
+
+	if(e.getSource() == exitButton) {
+	    frame.dispose();
+	    TitlePage page = new TitlePage();
+	    String[] args1 = {};
+	    page.main(args1);	
+	}   
+
+
+
+	if ((e.getSource() == hole0) && running0 == true) {
+	    coins += 10;
+	    coin.setText("" + coins);
+	}
+	if ((e.getSource() == hole1) && running1 == true) {
+	coins += 10;
+	coin.setText("" + coins);
+	}
+	if ((e.getSource() == hole2) && running2 == true) {
+	    coins += 10;
+	    coin.setText("" + coins);
+	}
+	if ((e.getSource() == hole3) && running3 == true) {
+	    coins += 10;
+	    coin.setText("" + coins);
+	}
+	if ((e.getSource() == hole4) && running4 == true) {
+	    coins += 10;
+	    coin.setText("" + coins);
+	}
+	if ((e.getSource() == hole5) && running5 == true) {
+	    coins += 10;
+	    coin.setText("" + coins);
+	}
+	if ((e.getSource() == hole6) && running6 == true) {
+	    coins += 10;
+	    coin.setText("" + coins);
+	}
+	if ((e.getSource() == hole7) && running7 == true) {
+	    coins += 10;
+	    coin.setText("" + coins);
+	}
+	if ((e.getSource() == hole8) && running8 == true) {
+	    coins += 10;
+	    coin.setText("" + coins);
+	}
+	if ((e.getSource() == hole9) && running9 == true) {
+	    coins += 10;
+	    coin.setText("" + coins);
+	}
+
+	
     }
 
-    /* public void actionPerformed(ActionEvent e) {
-        //rope0
-        if(e.getSource() == rope0 ) {
-	    rope0.setIcon(image1);
-	    if (0 == x || 0 == y) {
-		updates.setText("Sad life");
-	    }
-	}
-        //rope1
-        if(e.getSource() == rope1 ) {
-	    rope1.setIcon(image1);
-	    if (1 == x || 1 == y) {
-		updates.setText("Sad life");
-	    }
-        }
-        //rope2
-        if(e.getSource() == rope2) {
-	    rope2.setIcon(image1);
-	    if (2 == x || 2 == y) {
-		updates.setText("Sad life");
-		    }
-	}
-	//rope3
-	if(e.getSource() == rope3 ) {
-	    rope3.setIcon(image1);
-	    if (3 == x || 3 == y) {
-		updates.setText("Sad life");
-		    }
-	}
-	//rope4
-	if(e.getSource() == rope4 ) {
-	    rope4.setIcon(image1);
-	    if (4 == x || 4 == y) {
-		updates.setText("Sad life");
-		    }
-	}
-	//rope5
-	if(e.getSource() == rope5 ) {
-	    rope5.setIcon(image1);
-	    if (5 == x || 5 == y) {
-		updates.setText("Sad life");
-		    }
-	}
-	//rope6
-	if(e.getSource() == rope6 ) {
-	    rope6.setIcon(image1);
-	    if (6 == x || 6 == y) {
-		updates.setText("Sad life");
-		    }
-	}
-	//rope7
-	if(e.getSource() == rope7 ) {
-	    rope7.setIcon(image1);
-	    if (7 == x || 7 == y) {
-		updates.setText("Sad life");
-		    }
-	}
-	//rope8
-	if(e.getSource() == rope8 ) {
-	    rope8.setIcon(image1);
-	    if (8 == x || 8 == y) {
-		updates.setText("Sad life");
-		    }
-	}
-	//rope9
-	if(e.getSource() == rope9 ) {
-	    rope9.setIcon(image1);
-	    if (9 == x || 9 == y) {
-		updates.setText("Sad life");
-		    }
-	}
-
-
-
-
-	} */
-
+ 
     private static void createAndShowGUI() {
 
         JFrame.setDefaultLookAndFeelDecorated(true);
-        JFrame frame = new JFrame("CUT THE ROPE");
+        frame = new JFrame("WHACK-A-MOLE");
 
         //Create and set up the content pane.
         Whack demo = new Whack();
         frame.setContentPane(demo.createContentPane());
-
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(750, 750);
         frame.setLocation(250,75);
         frame.setVisible(true);
+	demo.changeIcon();
+
     }
 
     public static void main(String[] args) {
         //Schedule a job for the event-dispatching thread:
         //creating and showing this application's GUI.
+	Whack test = new Whack();
+	test.createAndShowGUI();
 
-
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                createAndShowGUI();
-            }
-        });
     }
 }
