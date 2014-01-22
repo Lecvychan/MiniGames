@@ -15,6 +15,7 @@ public class ButtonDemo implements ActionListener, Serializable{
     transient JButton exitButton, rope0,rope1,rope2,rope3,rope4,rope5,rope6,rope7,rope8,rope9;
     transient  ImageIcon image1 = new ImageIcon("cutrope0.jpg");
     transient JLabel updates, coin, top;
+    transient static JFrame frame = new JFrame("CUT THE ROPE");
     transient boolean b0 = false;
     transient boolean b1 = false;
     transient boolean b2 = false;
@@ -183,6 +184,7 @@ public class ButtonDemo implements ActionListener, Serializable{
         exitButton = new JButton("EXIT");
         exitButton.setLocation(535, 50);
         exitButton.setSize(150, 40);
+	exitButton.addActionListener(this);
         bottomPanel.add(exitButton);
         
         totalGUI.setOpaque(true);
@@ -204,11 +206,15 @@ public class ButtonDemo implements ActionListener, Serializable{
 
 	}
     
-
-
-    
 	top.setText("High Score: " + highscore);
-    
+
+
+	if(e.getSource() == exitButton) {
+	    frame.dispose();
+	    TitlePage page = new TitlePage();
+	    String[] args1 = {};
+	    page.main(args1);	
+	}    
 
         //rope0
         if(e.getSource() == rope0 ) {
@@ -399,7 +405,6 @@ public class ButtonDemo implements ActionListener, Serializable{
     private static void createAndShowGUI() {
 
         JFrame.setDefaultLookAndFeelDecorated(true);
-        JFrame frame = new JFrame("CUT THE ROPE");
 
         //Create and set up the content pane.
         ButtonDemo demo = new ButtonDemo();
