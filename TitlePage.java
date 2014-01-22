@@ -12,6 +12,7 @@ public class TitlePage  implements ActionListener {
 
     JButton rope, mole, scores;
     JLabel titleLabel, messages;
+    static JFrame frame;
 
     public JPanel createContentPane () {
 
@@ -67,7 +68,7 @@ public class TitlePage  implements ActionListener {
 	mole.addActionListener(this);
         buttonPanel.add(mole);
         
-	  JPanel bottomPanel = new JPanel();
+	JPanel bottomPanel = new JPanel();
         bottomPanel.setLayout(null);
         bottomPanel.setLocation(10, 0);
         bottomPanel.setSize(250, 30);
@@ -86,12 +87,14 @@ public class TitlePage  implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         //rope
         if(e.getSource() == rope ) {
+	    frame.dispose();
 	    ButtonDemo game = new ButtonDemo();
 	    String[] args1 = {};
 	    game.main(args1);
 	}
         //mole
        if(e.getSource() == mole ) {
+	   frame.dispose();
 	   Whack game = new Whack();
 	    String[] args2 = {};
 	    game.main(args2);
@@ -113,7 +116,7 @@ public class TitlePage  implements ActionListener {
     private static void createAndShowGUI() {
 
         JFrame.setDefaultLookAndFeelDecorated(true);
-        JFrame frame = new JFrame("MINI GAMES");
+        frame = new JFrame("MINI GAMES");
 
         //Create and set up the content pane.
         TitlePage demo = new TitlePage();
