@@ -8,18 +8,20 @@ import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.Timer;
+import java.io.*;
 
 public class Whack implements ActionListener{
 
-    JButton hole0,hole1,hole2,hole3,hole4,hole5,hole6,hole7,hole8,hole9,exitButton;
-    ImageIcon image = new ImageIcon("hole.jpg");
-    ImageIcon image1 = new ImageIcon("mole.jpg");
-    JLabel updates, coin;
-    static JFrame frame;
-    int coins = 0;
-    int x;
-    boolean running0, running1, running2, running3, running4, running5, running6, running7, running8, running9;
-    private int num = 0;
+    transient JButton hole0,hole1,hole2,hole3,hole4,hole5,hole6,hole7,hole8,hole9,exitButton;
+    transient ImageIcon image = new ImageIcon("hole.jpg");
+    transient ImageIcon image1 = new ImageIcon("mole.jpg");
+    transient JLabel updates, coin, top;
+    transient static JFrame frame;
+    transient int coins = 0;
+    transient int x;
+    transient boolean running0, running1, running2, running3, running4, running5, running6, running7, running8, running9;
+    transient private int num = 0;
+    public int score;
 
     public JPanel createContentPane (){
 
@@ -152,13 +154,23 @@ public class Whack implements ActionListener{
 
         coin = new JLabel("Coins: 0");
         coin.setFont(new Font("Times New Roman", Font.BOLD, 14));
-        coin.setLocation(100, 50);
+        coin.setLocation(10, 50);
         coin.setSize(250, 40);
         coin.setHorizontalAlignment(0);
         coin.setForeground(Color.black);
         coin.setBackground(Color.pink);
         coin.setOpaque(true);
         bottomPanel.add(coin);
+
+        top = new JLabel("Highscore: " + score);
+        top.setFont(new Font("Times New Roman", Font.BOLD, 14));
+        top.setLocation(250,50);
+	top.setSize(250, 40);
+        top.setHorizontalAlignment(0);
+        top.setForeground(Color.black);
+        top.setBackground(Color.orange);
+        top.setOpaque(true);
+        bottomPanel.add(top);
 
         exitButton = new JButton("EXIT");
         exitButton.setLocation(500, 50);
@@ -294,6 +306,22 @@ public class Whack implements ActionListener{
 
     public void actionPerformed(ActionEvent e) {
 
+	try {
+	    FileInputStream fileIn = new FileInputStream ("Whack.ser");
+	    ObjectInputStream is = new ObjectInputStream (fileIn);
+	    score = is.readInt(); 
+
+
+	} catch(FileNotFoundException ex) {
+	    System.out.println("No Score");
+	}
+	catch(Exception ex) {
+	    System.out.println (ex.getMessage());	
+
+	}
+
+
+
 	if(e.getSource() == exitButton) {
 	    frame.dispose();
 	    TitlePage page = new TitlePage();
@@ -341,9 +369,17 @@ public class Whack implements ActionListener{
 	    coins += 10;
 	    coin.setText("" + coins);
 	}
-
-
-
+	if (coins > score) 
+	    score = coins;
+	try {
+	    FileOutputStream fs = new FileOutputStream ("Whack.ser");
+	    ObjectOutputStream os = new ObjectOutputStream (fs);
+	    os.writeInt (score);
+	    os.close();
+	} catch (Exception ex) {
+	    ex.printStackTrace();
+	}
+	top.setText ("Highscore: " + score);
 	
     }
 
