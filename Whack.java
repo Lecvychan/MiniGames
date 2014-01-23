@@ -174,6 +174,8 @@ public class Whack implements ActionListener{
     public  void changeIcon() {
 	long usedTime;
 	long startTime;
+	long usedTime1;
+	long startTime1;
 
  	for (int num = 0; num < 30; num++) {
 
@@ -268,11 +270,23 @@ public class Whack implements ActionListener{
 	    }
 	    if (running9 == true) {
 		hole9.setIcon(image);
-		running9 = false;
-	    
+		running9 = false;	    
 	    }
 	    
+	}
+
+	usedTime1 = 0;
+	startTime1 = System.currentTimeMillis();
+
+       while (usedTime1 <= 3000) {
+	    	usedTime1 = System.currentTimeMillis() - startTime1;
 	    }
+
+	frame.dispose();
+	TitlePage page = new TitlePage();
+	String[] args1 = {};
+	page.main(args1);
+
     }
     
     
@@ -280,15 +294,12 @@ public class Whack implements ActionListener{
 
     public void actionPerformed(ActionEvent e) {
 
-
 	if(e.getSource() == exitButton) {
 	    frame.dispose();
 	    TitlePage page = new TitlePage();
 	    String[] args1 = {};
 	    page.main(args1);	
 	}   
-
-
 
 	if ((e.getSource() == hole0) && running0 == true) {
 	    coins += 10;
@@ -330,6 +341,8 @@ public class Whack implements ActionListener{
 	    coins += 10;
 	    coin.setText("" + coins);
 	}
+
+
 
 	
     }
