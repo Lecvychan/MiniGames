@@ -190,6 +190,31 @@ public class ButtonDemo implements ActionListener, Serializable{
         totalGUI.setOpaque(true);
         return totalGUI;
     }
+    /*
+    public void popup() {
+	
+	int choice = JOptionPane.showOptionDialog(null, //Component parentComponent
+						  "Sorry, game over!", //Object message,
+						  "Choose an option", //String title
+						  JOptionPane.YES_NO_OPTION, //int optionType
+						  JOptionPane.INFORMATION_MESSAGE, //int messageType
+						  null, //Icon icon,
+						  {"Play again","Return to home page"}, //Object[] options,
+						  "Play again");//Object initialValue 
+	if(choice == 0 ){
+	    frame.dispose();
+	    ButtonDemo game = new ButtonDemo();
+	    String[] args1 = {};
+	    game.main(args1);
+	}else{
+	    frame.dispose();
+	    TitlePage page = new TitlePage();
+	    String[] args1 = {};
+	    page.main(args1);
+	}
+    }
+*/
+
 
     public void actionPerformed(ActionEvent e) {
 
@@ -220,7 +245,16 @@ public class ButtonDemo implements ActionListener, Serializable{
         if(e.getSource() == rope0 ) {
 	    rope0.setIcon(image1);
 	    if (0 == x || 0 == y) {
-		updates.setText("Sad life");
+		long usedTime1 = 0;
+		long startTime1 = System.currentTimeMillis();
+
+		while (usedTime1 <= 3000) {
+		    usedTime1 = System.currentTimeMillis() - startTime1;
+		}
+		frame.dispose();
+		TitlePage page = new TitlePage();
+		String[] args1 = {};
+		page.main(args1);
 	    }
 	    
 	    if (b0 == false) {
@@ -240,7 +274,16 @@ public class ButtonDemo implements ActionListener, Serializable{
         if(e.getSource() == rope1 ) {
 	    rope1.setIcon(image1);
 	    if (1 == x || 1 == y) {
-		updates.setText("Sad life");
+		long usedTime1 = 0;
+		long startTime1 = System.currentTimeMillis();
+
+		while (usedTime1 <= 3000) {
+		    usedTime1 = System.currentTimeMillis() - startTime1;
+		}
+		frame.dispose();
+		TitlePage page = new TitlePage();
+		String[] args1 = {};
+		page.main(args1);
 	
 	    }
 	   if (b1 == false) {
@@ -258,8 +301,16 @@ public class ButtonDemo implements ActionListener, Serializable{
 
 	    rope2.setIcon(image1);
 	    if (2 == x || 2 == y) {
-		updates.setText("Sad life");
-	
+		long usedTime1 = 0;
+		long startTime1 = System.currentTimeMillis();
+
+		while (usedTime1 <= 3000) {
+		    usedTime1 = System.currentTimeMillis() - startTime1;
+		}
+		frame.dispose();
+		TitlePage page = new TitlePage();
+		String[] args1 = {};
+		page.main(args1);	
 	    }
 	    if (b2 == false) {
 		if (2 != x &&  2 != y) {
@@ -276,9 +327,16 @@ public class ButtonDemo implements ActionListener, Serializable{
 	
 	    rope3.setIcon(image1);
 	    if (3 == x || 3 == y) {
-		updates.setText("Sad life");
-		updates.setText("Sad life");
+		long usedTime1 = 0;
+		long startTime1 = System.currentTimeMillis();
 
+		while (usedTime1 <= 3000) {
+		    usedTime1 = System.currentTimeMillis() - startTime1;
+		}
+		frame.dispose();
+		TitlePage page = new TitlePage();
+		String[] args1 = {};
+		page.main(args1);
 	    }
 	   if (b3 == false) {
 		if (3 != x &&  3 != y) {
@@ -294,7 +352,16 @@ public class ButtonDemo implements ActionListener, Serializable{
 	if(e.getSource() == rope4 ) {
 	    rope4.setIcon(image1);
 	    if (4 == x || 4 == y) {
-		updates.setText("Sad life");
+		long usedTime1 = 0;
+		long startTime1 = System.currentTimeMillis();
+
+		while (usedTime1 <= 3000) {
+		    usedTime1 = System.currentTimeMillis() - startTime1;
+		}
+		frame.dispose();
+		TitlePage page = new TitlePage();
+		String[] args1 = {};
+		page.main(args1);
 	    }
 	    if (b4 == false) {
 		if (4 != x &&  4 != y) {
@@ -310,7 +377,16 @@ public class ButtonDemo implements ActionListener, Serializable{
 	if(e.getSource() == rope5 ) {
 	    rope5.setIcon(image1);
 	    if (5 == x || 5 == y) {
-		updates.setText("Sad life");
+		long usedTime1 = 0;
+		long startTime1 = System.currentTimeMillis();
+
+		while (usedTime1 <= 3000) {
+		    usedTime1 = System.currentTimeMillis() - startTime1;
+		}
+		frame.dispose();
+		TitlePage page = new TitlePage();
+		String[] args1 = {};
+		page.main(args1);
 		
 	    }
 	    if (b5 == false) {
@@ -327,7 +403,16 @@ public class ButtonDemo implements ActionListener, Serializable{
 	if(e.getSource() == rope6 ) {
 	    rope6.setIcon(image1);
 	    if (6 == x || 6 == y) {
-		updates.setText("Sad life");
+		long usedTime1 = 0;
+		long startTime1 = System.currentTimeMillis();
+
+		while (usedTime1 <= 3000) {
+		    usedTime1 = System.currentTimeMillis() - startTime1;
+		}
+		frame.dispose();
+		TitlePage page = new TitlePage();
+		String[] args1 = {};
+		page.main(args1);
 	    }
 	    if (b6 == false) {
 		if (6 != x &&  6 != y) {
@@ -344,7 +429,16 @@ public class ButtonDemo implements ActionListener, Serializable{
 	if(e.getSource() == rope7 ) {
 	    rope7.setIcon(image1);
 	    if (7 == x || 7 == y) {
-		updates.setText("Sad life");
+		long usedTime1 = 0;
+		long startTime1 = System.currentTimeMillis();
+
+		while (usedTime1 <= 3000) {
+		    usedTime1 = System.currentTimeMillis() - startTime1;
+		}
+		frame.dispose();
+		TitlePage page = new TitlePage();
+		String[] args1 = {};
+		page.main(args1);
 	    }
 	    if (b7 == false) {
 		if (7 != x &&  7 != y) {
@@ -360,7 +454,16 @@ public class ButtonDemo implements ActionListener, Serializable{
 	if(e.getSource() == rope8 ) {
 	    rope8.setIcon(image1);
 	    if (8 == x || 8 == y) {
-		updates.setText("Sad life");
+		long usedTime1 = 0;
+		long startTime1 = System.currentTimeMillis();
+
+		while (usedTime1 <= 3000) {
+		    usedTime1 = System.currentTimeMillis() - startTime1;
+		}
+		frame.dispose();
+		TitlePage page = new TitlePage();
+		String[] args1 = {};
+		page.main(args1);
 	    }
 	    if (b8 == false) {
 		if (8 != x &&  8 != y) {
@@ -376,8 +479,16 @@ public class ButtonDemo implements ActionListener, Serializable{
 	if(e.getSource() == rope9 ) {
 	    rope9.setIcon(image1);
 	    if (9 == x || 9 == y) {
-		updates.setText("Sad life");
+		long usedTime1 = 0;
+		long startTime1 = System.currentTimeMillis();
 
+		while (usedTime1 <= 3000) {
+		    usedTime1 = System.currentTimeMillis() - startTime1;
+		}
+		frame.dispose();
+		TitlePage page = new TitlePage();
+		String[] args1 = {};
+		page.main(args1);
 	    }
 	    if (b9 == false) {
 		if (9 != x &&  9 != y) {
@@ -399,6 +510,7 @@ public class ButtonDemo implements ActionListener, Serializable{
 	    ex.printStackTrace();
 	}
 	top.setText("High Score: " + highscore);
+
     }
 
     
