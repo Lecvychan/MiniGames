@@ -154,7 +154,7 @@ public class Whack implements ActionListener{
 
         coin = new JLabel("Coins: 0");
         coin.setFont(new Font("Times New Roman", Font.BOLD, 14));
-        coin.setLocation(10, 50);
+        coin.setLocation(20, 50);
         coin.setSize(250, 40);
         coin.setHorizontalAlignment(0);
         coin.setForeground(Color.black);
@@ -164,7 +164,7 @@ public class Whack implements ActionListener{
 
         top = new JLabel("Highscore: " + score);
         top.setFont(new Font("Times New Roman", Font.BOLD, 14));
-        top.setLocation(250,50);
+        top.setLocation(275, 50);
 	top.setSize(250, 40);
         top.setHorizontalAlignment(0);
         top.setForeground(Color.black);
@@ -173,8 +173,8 @@ public class Whack implements ActionListener{
         bottomPanel.add(top);
 
         exitButton = new JButton("EXIT");
-        exitButton.setLocation(500, 50);
-        exitButton.setSize(220, 30);
+	exitButton.setLocation(535, 50);
+        exitButton.setSize(150, 40);
 	exitButton.addActionListener(this);
         bottomPanel.add(exitButton);
         
