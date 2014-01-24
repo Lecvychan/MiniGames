@@ -182,6 +182,33 @@ public class Whack implements ActionListener{
         return totalGUI;	
 
     }
+
+
+ public void popup() {
+	  Object[] options = {"Play again","Return to home page"};
+      int choice = JOptionPane.showOptionDialog(null, //Component parentComponent
+      "Sorry, game over!", //Object message,
+      "Choose an option", //String title
+      JOptionPane.YES_NO_OPTION, //int optionType
+      JOptionPane.INFORMATION_MESSAGE, //int messageType
+      null, //Icon icon,
+      options, //Object[] options,
+      "Play again");//Object initialValue 
+
+      if(choice == 0 ){
+      frame.dispose();
+      ButtonDemo game = new ButtonDemo();
+      String[] args1 = {};
+      game.main(args1);
+      }
+else{
+      frame.dispose();
+      TitlePage page = new TitlePage();
+      String[] args1 = {};
+      page.main(args1);
+      }
+      }
+    
     
     public  void changeIcon() {
 	long usedTime;
@@ -295,9 +322,7 @@ public class Whack implements ActionListener{
 	    }
 
 	frame.dispose();
-	TitlePage page = new TitlePage();
-	String[] args1 = {};
-	page.main(args1);
+	this.popup();
 
     }
     
