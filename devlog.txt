@@ -21,13 +21,15 @@ Frances Shapiro, Sunnam Quispe, Lecvy Chan
 
 1/22/14 - Frances finds the bug (minor errors in code and called in the wrong place)! "Whack a Mole" has complete functionality. Sunnam gives the exit button functionality to close automatically after player loses. Problems: Wants to create a dialouge pop up window instead, "Whack a Mole" works perfectly when opened in the command prompt but doesn't load when accessed through the main menu page.
 
+1/23/14 - Sunnam and Frances create a dialog box that pops up when each game finishes, and gives you the option to return to the game and play again, or return to the main menu. 
+
 Actual man hours: ~35
 
 Obstacles Overcome:
 	Our first obstacle was understanding "how to GUI"! We searched the internet for examples of simple GUI programs, and read up on how to first create and layout plan, then create button functionality using ActionListener! Mr. DW/tutoring was also a big help, because they made us realize what restrictions we might have to deal with, and how to go around them. Another obstacle was figuring out how to change the picture of a button, which required quite a bit of research for such a simple function. Another ostacle was maintaining the high score after the program is closed. Lecvy was able to solve this through using the online textbook, where he found serialization and how to use it. The biggest obstacle was getting the mole to pop up and down in "Whack a Mole." Sunnam tried many different ways of using timers, and differnt timing methods, and finally ended up using System.currentTimeMillis(). This solution just took some time, lots of experimentation, and bug fixing to work. 
 
 Unresolved issues:
-	Our biggest unresolved issue is the main menu. Although the button to open "Cut the Rope" through the main menu works, you cannot play "Whack a Mole." We have discovered that "Whack a MOle" does open and run, but the window remains blank, and you cannot complete the game. We have not been able to change the code in order to keep functionality while resolving the problem.
+	Our biggest unresolved issue is the main menu. Although the button to open "Cut the Rope" through the main menu works, you cannot play "Whack a Mole." We have discovered that "Whack a MOle" does open and run, but the window remains blank, and you cannot complete the game. We have not been able to change the code in order to keep functionality while resolving the problem.We also would have like to have added a "High score" button on the main menu that opens up a file of existing high scores in each game (possibly the top 5 in each). However, this was our last priority, so we didn't end up creating this functionality. 
 
 Cool Stuff Learned:
 	First of all, we know all know how to use basic GUI, swing class, and Action Listener. We also learned how to do cool stuff in GUI like change button icons, give buttons functionality, and the coolest: control time in GUI!
