@@ -8,6 +8,7 @@ import javax.swing.JLabel;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.io.*;
+import java.awt.Dialog;
 
 
 public class ButtonDemo implements ActionListener, Serializable{
@@ -190,30 +191,32 @@ public class ButtonDemo implements ActionListener, Serializable{
         totalGUI.setOpaque(true);
         return totalGUI;
     }
-    /*
-    public void popup() {
-	
-	int choice = JOptionPane.showOptionDialog(null, //Component parentComponent
-						  "Sorry, game over!", //Object message,
-						  "Choose an option", //String title
-						  JOptionPane.YES_NO_OPTION, //int optionType
-						  JOptionPane.INFORMATION_MESSAGE, //int messageType
-						  null, //Icon icon,
-						  {"Play again","Return to home page"}, //Object[] options,
-						  "Play again");//Object initialValue 
-	if(choice == 0 ){
-	    frame.dispose();
-	    ButtonDemo game = new ButtonDemo();
-	    String[] args1 = {};
-	    game.main(args1);
-	}else{
-	    frame.dispose();
-	    TitlePage page = new TitlePage();
-	    String[] args1 = {};
-	    page.main(args1);
-	}
-    }
-*/
+    
+      public void popup() {
+	  Object[] options = {"Play again","Return to home page"};
+      int choice = JOptionPane.showOptionDialog(null, //Component parentComponent
+      "Sorry, game over!", //Object message,
+      "Choose an option", //String title
+      JOptionPane.YES_NO_OPTION, //int optionType
+      JOptionPane.INFORMATION_MESSAGE, //int messageType
+      null, //Icon icon,
+      options, //Object[] options,
+      "Play again");//Object initialValue 
+
+      if(choice == 0 ){
+      frame.dispose();
+      ButtonDemo game = new ButtonDemo();
+      String[] args1 = {};
+      game.main(args1);
+      }
+else{
+      frame.dispose();
+      TitlePage page = new TitlePage();
+      String[] args1 = {};
+      page.main(args1);
+      }
+      }
+    
 
 
     public void actionPerformed(ActionEvent e) {
@@ -281,9 +284,7 @@ public class ButtonDemo implements ActionListener, Serializable{
 		    usedTime1 = System.currentTimeMillis() - startTime1;
 		}
 		frame.dispose();
-		TitlePage page = new TitlePage();
-		String[] args1 = {};
-		page.main(args1);
+		this.popup();
 	
 	    }
 	   if (b1 == false) {
@@ -308,9 +309,7 @@ public class ButtonDemo implements ActionListener, Serializable{
 		    usedTime1 = System.currentTimeMillis() - startTime1;
 		}
 		frame.dispose();
-		TitlePage page = new TitlePage();
-		String[] args1 = {};
-		page.main(args1);	
+		this.popup();	
 	    }
 	    if (b2 == false) {
 		if (2 != x &&  2 != y) {
@@ -334,9 +333,7 @@ public class ButtonDemo implements ActionListener, Serializable{
 		    usedTime1 = System.currentTimeMillis() - startTime1;
 		}
 		frame.dispose();
-		TitlePage page = new TitlePage();
-		String[] args1 = {};
-		page.main(args1);
+		this.popup();
 	    }
 	   if (b3 == false) {
 		if (3 != x &&  3 != y) {
@@ -359,9 +356,7 @@ public class ButtonDemo implements ActionListener, Serializable{
 		    usedTime1 = System.currentTimeMillis() - startTime1;
 		}
 		frame.dispose();
-		TitlePage page = new TitlePage();
-		String[] args1 = {};
-		page.main(args1);
+		this.popup();
 	    }
 	    if (b4 == false) {
 		if (4 != x &&  4 != y) {
@@ -384,9 +379,7 @@ public class ButtonDemo implements ActionListener, Serializable{
 		    usedTime1 = System.currentTimeMillis() - startTime1;
 		}
 		frame.dispose();
-		TitlePage page = new TitlePage();
-		String[] args1 = {};
-		page.main(args1);
+		this.popup();
 		
 	    }
 	    if (b5 == false) {
@@ -410,9 +403,7 @@ public class ButtonDemo implements ActionListener, Serializable{
 		    usedTime1 = System.currentTimeMillis() - startTime1;
 		}
 		frame.dispose();
-		TitlePage page = new TitlePage();
-		String[] args1 = {};
-		page.main(args1);
+		this.popup();
 	    }
 	    if (b6 == false) {
 		if (6 != x &&  6 != y) {
@@ -436,9 +427,7 @@ public class ButtonDemo implements ActionListener, Serializable{
 		    usedTime1 = System.currentTimeMillis() - startTime1;
 		}
 		frame.dispose();
-		TitlePage page = new TitlePage();
-		String[] args1 = {};
-		page.main(args1);
+		this.popup();
 	    }
 	    if (b7 == false) {
 		if (7 != x &&  7 != y) {
@@ -461,9 +450,7 @@ public class ButtonDemo implements ActionListener, Serializable{
 		    usedTime1 = System.currentTimeMillis() - startTime1;
 		}
 		frame.dispose();
-		TitlePage page = new TitlePage();
-		String[] args1 = {};
-		page.main(args1);
+		this.popup();
 	    }
 	    if (b8 == false) {
 		if (8 != x &&  8 != y) {
@@ -486,9 +473,7 @@ public class ButtonDemo implements ActionListener, Serializable{
 		    usedTime1 = System.currentTimeMillis() - startTime1;
 		}
 		frame.dispose();
-		TitlePage page = new TitlePage();
-		String[] args1 = {};
-		page.main(args1);
+		this.popup();
 	    }
 	    if (b9 == false) {
 		if (9 != x &&  9 != y) {
@@ -510,7 +495,7 @@ public class ButtonDemo implements ActionListener, Serializable{
 	    ex.printStackTrace();
 	}
 	top.setText("High Score: " + highscore);
-
+	
     }
 
     
