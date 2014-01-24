@@ -60,7 +60,7 @@ public class ButtonDemo implements ActionListener, Serializable{
         titleLabel.setOpaque(true);
         titlePanel.add(titleLabel);
 
-        JLabel messages = new JLabel("<html><p>Instructions: To play Cut the Rope, you must be brave and lucky! Cut one of the ropes and see what happens, if it is a safe rope, you can continue on to test your luck or leave safely with your coins. If it is deadly unfortunately you made a fatal mistake." );
+        JLabel messages = new JLabel("<html><p>Instructions: To play Cut the Rope, you must be brave and lucky! Cut one of the ropes and see what happens, if it is a safe rope, you can continue on to test your luck and try again. If it is deadly unfortunately you made a fatal mistake." );
         messages.setLocation(125, 30);
         messages.setSize(500, 100);
         messages.setHorizontalAlignment(0);
