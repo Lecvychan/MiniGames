@@ -10,7 +10,7 @@ import java.awt.event.ActionEvent;
 
 public class TitlePage  implements ActionListener {
 
-    JButton rope, mole, scores;
+    JButton rope, mole;
     JLabel titleLabel, messages;
     static JFrame frame;
 
@@ -74,11 +74,6 @@ public class TitlePage  implements ActionListener {
         bottomPanel.setSize(250, 30);
         totalGUI.add(bottomPanel);
 
-
-        scores = new JButton("HIGH SCORES");
-        scores.setLocation(265, 50);
-        scores.setSize(220, 60);
-        bottomPanel.add(scores);
         
         totalGUI.setOpaque(true);
         return totalGUI;
@@ -100,13 +95,6 @@ public class TitlePage  implements ActionListener {
 	    game.main(args2);
 	}
 
-	/* //scores
-        if(e.getSource() == rope2) {
-	    rope2.setIcon(image1);
-	    if (2 == x || 2 == y) {
-		updates.setText("Sad life");
-		    }
-	*/
 
 
     
