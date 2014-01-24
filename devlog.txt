@@ -1,0 +1,39 @@
+Gnu Kidz on the Code Block 3.0
+Frances Shapiro, Sunnam Quispe, Lecvy Chan
+
+1/7/14 - Sunnam and Frances sumbit their project proposal: Carnival Mini Games consisting of three games, "Cut the Rope" and "Gin Rummy" made first in the terminal, then converted to GUI, and possibly "Whack a Mole" in GUI. Estimated man hours: 40
+
+1/9/14 - Lecvy joins the team! Sunnam and Frances begin to teach themselves GUI based on textbooks and online resources (recommened by Mr. Brown and Mr. DW). They decide to start "Cut The Rope" in GUI.
+
+1/11/14 - Frances creates the GUI panels and layout of the buttons for "Cut the Rope."
+
+1/14/14 - Sunnam and Lecvy are assigned to finish the functionality for "Cut the Rope." Problem: cannot find function to change the picture of the button once it is clicked.
+
+1/15/14 - Lecvy finds said function! (___.setIcon(___)) Sunnam and Lecvy complete "Cut the Rope" functionality. New problem: exit button functionality, keeping track of high scores, and changing text when you lose the game.
+
+1/17/14 - Sunnam is able to change the text of the JLabel when you lose.
+
+1/19/14 - Frances creates the GUI for "Whack a Mole" and the main menu page. Lecvy is able to write code to keep track of the high score in "Cut the Rope." 
+
+1/20/14 - Sunnam has trouble writing code to make the "moles" (icon change) pop up in "Whack a Mole"
+
+1/21/14 - Lecvy and Mr. Brown are enlisted for her, cannot find bug in "Whack a Mole." Frances gives the buttons on the main menu page functionality (to choose and play either game).
+
+1/22/14 - Frances finds the bug (minor errors in code and called in the wrong place)! "Whack a Mole" has complete functionality. Sunnam gives the exit button functionality to close automatically after player loses. Problems: Wants to create a dialouge pop up window instead, "Whack a Mole" works perfectly when opened in the command prompt but doesn't load when accessed through the main menu page.
+
+Actual man hours: ~35
+
+Obstacles Overcome:
+	Our first obstacle was understanding "how to GUI"! We searched the internet for examples of simple GUI programs, and read up on how to first create and layout plan, then create button functionality using ActionListener! Mr. DW/tutoring was also a big help, because they made us realize what restrictions we might have to deal with, and how to go around them. Another obstacle was figuring out how to change the picture of a button, which required quite a bit of research for such a simple function. Another ostacle was maintaining the high score after the program is closed. Lecvy was able to solve this through using the online textbook, where he found serialization and how to use it. The biggest obstacle was getting the mole to pop up and down in "Whack a Mole." Sunnam tried many different ways of using timers, and differnt timing methods, and finally ended up using System.currentTimeMillis(). This solution just took some time, lots of experimentation, and bug fixing to work. 
+
+Unresolved issues:
+	Our biggest unresolved issue is the main menu. Although the button to open "Cut the Rope" through the main menu works, you cannot play "Whack a Mole." We have discovered that "Whack a MOle" does open and run, but the window remains blank, and you cannot complete the game. We have not been able to change the code in order to keep functionality while resolving the problem.
+
+Cool Stuff Learned:
+	First of all, we know all know how to use basic GUI, swing class, and Action Listener. We also learned how to do cool stuff in GUI like change button icons, give buttons functionality, and the coolest: control time in GUI!
+
+Mid-Development Design Changes(and why):
+	When Lecvy joined our team, we had a group discussion of division of labor, tasks, etc. We all agreed it would be best if we started with "cut the Rope," and depending on how hard it was, we would do "Whack a MOle" next. We were able to complete "Cut the Rope" pretty early, so we were then able to focus on adding extra features to each. We didn't have time to create a third game in GUI, and we didn't want to have two games in GUI and one in the terminal, so we decided to just focus on the two and robustify them.
+
+Lessons learned:
+	THINK BEFORE YOU DRINK!!! Thank the Compsci Gods that Mr. DW forced Sunnam and Frances to plan everything on paper before they got so mesmerized (and LOST) in GUI! We sometimes did almost get lost in our code, but by looking at our original plan, and having plans written down for individual methods, we were able to sober up before we made a fatal mistake (//forgive me for the anology, I just took a health final). 
